@@ -1,6 +1,6 @@
 # node-rn [![NPM version](https://badge.fury.io/js/node-rn.svg)](http://badge.fury.io/js/node-rn)
 
-> your description here
+> a handy rename file script
 
 ## Install globally with [npm](npmjs.org):
 
@@ -12,17 +12,20 @@ npm i -g node-rn
 
 ```
 Usage:
-    rn [ ls | list ]
-    rn [ FROM TO [ --save NAME ] | --use NAME ] [ --go ] FILES ...
+    rn -l | --list 
+    rn (-u NAME | --use NAME) FILES ...
+    rn [ -s NAME | --save NAME ] FROM TO [ -g | --go ] [ -X | --eXt ] FILES ...
     rn -h | --help 
 
 Options:
     -g, --go          Execute rename, otherwise is dry-run
     -u, --use NAME    Use template stored as NAME
     -s, --save NAME   Save template stored as NAME
+    -l, --list        Show templates
+    -X, --ext         Discard extension on file name matches
 
-Commands:
-    ls, list          List available templates          
+
+
 ```
 
 ## Regular expression shortcuts
