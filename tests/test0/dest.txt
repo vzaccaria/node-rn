@@ -1,0 +1,13 @@
+{ '--go': false,
+  '--use': false,
+  '--save': false,
+  '--list': false,
+  '--ext': false,
+  '--eXt': false,
+  '-h': false,
+  '--help': false,
+  FILES: [ 'a-slides.pdf', 'b-slides.pdf' ],
+  FROM: '*-slides.pdf',
+  TO: 's-*.pdf' }
+[ [ 'a-slides.pdf', 'a', index: 0, input: 'a-slides.pdf' ],
+  [ 'b-slides.pdf', 'b', index: 0, input: 'b-slides.pdf' ] ]

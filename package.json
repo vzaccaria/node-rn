@@ -1,0 +1,20 @@
+{
+  "name": "node-rn",
+  "version": "0.0.1",
+  "description": "your description here",
+  "bin": {
+    "rn": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Vittorio Zaccaria",
+  "license": "BSD",
+  "dependencies": {
+    "docopt": "~0.4.1",
+    "shelljs": "*",
+    "lodash": "~2.4.1",
+    "diff-files": "0.0.3"
+  }
+}
