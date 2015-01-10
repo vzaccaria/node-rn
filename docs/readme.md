@@ -14,14 +14,13 @@
 
 ## Templates
 
-Renaming templates are stored in `~/.rnc` in JSON format. Each template is a JSON object with the following properties:
+Renaming templates are stored in `~/.rnc` in JSON format. This file is a JSON map from template names to objects representing:
 
 ```json
 { 
-    "name":     "template-name",
     "from":     "from regex",
     "to":       "to regex",
-    "options":  "other options to rn"
+    "description": "description"
 }
 ```
 

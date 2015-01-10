@@ -1,0 +1,6 @@
+Create pdf
+From: a-slides.pdf to pdf/s-keyword-000.pdf
+Create pdf
+From: b-slides.pdf to pdf/s-keyword-001.pdf
+Create pdf
+From: c-slide.pdf to pdf/s-keyword-002.pdf

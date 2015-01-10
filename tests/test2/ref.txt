@@ -1,0 +1,6 @@
+Create 1501
+From: a-slides.pdf to 1501/s-keyword-000.pdf
+Create 1501
+From: b-slides.pdf to 1501/s-keyword-001.pdf
+Create 1501
+From: c-slide.pdf to 1501/s-keyword-002.pdf

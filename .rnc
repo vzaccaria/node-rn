@@ -1,0 +1,15 @@
+{
+    "kelby": {
+        "name": "kelby",
+        "from": "*",
+        "to": "$D{YYMMDD}_$K_$000N",
+        "description": "This was described in Scott Kelby's book on Lightroom"
+    },
+    "kelbyf": {
+        "name": "kelbyf",
+        "from": "*",
+        "to": "$D{YYMMDD}/$D{YYMMDD}_$K_$000N",
+        "description": "As kelby, but creates a folder with creation date"
+    }
+    
+}

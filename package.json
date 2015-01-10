@@ -15,6 +15,10 @@
     "docopt": "~0.4.1",
     "shelljs": "*",
     "lodash": "~2.4.1",
-    "diff-files": "0.0.3"
+    "diff-files": "0.0.3",
+    "underscore.string": "~2.4.0",
+    "verbal-expressions": "~0.1.2",
+    "bluebird": "~2.6.2",
+    "easy-table": "~0.3.0"
   }
 }

@@ -1,0 +1,3 @@
+From: a-slides.pdf to ASlides.pdf
+From: b-slides.pdf to BSlides.pdf
+From: c-slide.pdf to CSlide.pdf

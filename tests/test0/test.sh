@@ -10,6 +10,5 @@ dstdir=`pwd`
 bindir=$srcdir/../..
 npm=$srcdir/../../node_modules/.bin
 
-$bindir/index.js '*-slides.pdf' 's-*.pdf' $srcdir/*.pdf 
-# > $srcdir/dest.txt 
-# $npm/diff-files $srcdir/dest.txt $srcdir/ref.txt
+$bindir/index.js '*-slides' '$D{YYMM}/s-*-$K-$000N' $srcdir/*.pdf > $srcdir/dest.txt
+$npm/diff-files $srcdir/dest.txt $srcdir/ref.txt -m "Should work disregarding extensions"
