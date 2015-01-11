@@ -69,6 +69,7 @@ parse-options = ->
 
     if options.verb 
         verbose := console.log 
+        normal := ->
 
     exist-or-throw = (v, name, message) ->
        if not v? 
@@ -120,12 +121,7 @@ replace-placeholders = (final) ->
 
     return final
 
-compute-dest-dir = (final) ->
-    for f in final
-        f.finalName = "#{f.dirname}/#{f.newName}"
-        if not fs.existsSync(path.dirname(f.finalName)) 
-            f.create = path.dirname(f.finalName)
-    return final
+
 
 replace-patterns = (final, from, tto) ->
         if not from?
@@ -155,33 +151,45 @@ unwrap-info = (files) ->
                 basename: path.basename(it), 
                 basenameNoext: path.basename(it, path.extname(it)) }
 
+
+
+
 compute-final-name = (files) ->
     return _.map files, (f) ->
         if options.transform != ''
             f.newName   = _s[options.transform](f.newName)
 
-        finalNameLong = 
-            | options.include_ext => "#{f.dirname}/#{f.newName}"
-            | otherwise => "#{f.dirname}/#{f.newName}#{f.ext}"
+        dest-is-abs = (tto[0] == '.') or (tto[0] == "~") or (tto[0]=='/')
 
-        finalNameRelative = path.relative(path.dirname(f.original), finalNameLong)
+
+        addext = 
+            | options.include_ext => ""
+            | otherwise => f.ext
+
+        finalNameLong = 
+            | not dest-is-abs => "#{f.dirname}/#{f.newName}#addext"
+            | otherwise => "#{f.newName}#addext"
+
+        finalNameRelative = 
+            | not dest-is-abs => path.relative(path.dirname(f.original), finalNameLong)
+            | otherwise => finalNameLong
 
         _.extend(f, { finalNameLong: finalNameLong, finalNameRelative: finalNameRelative })
 
-        if f.create? 
-            createRelative = path.relative(path.dirname(f.original), f.create)
-            _.extend(f, { createRelative: createRelative})
+        if not fs.existsSync(path.dirname(f.finalNameLong)) 
+            f.create = path.dirname(f.finalNameLong)
 
         return f
 
-move = (f) ->
-    if f.create? 
-        normal  "Create #{f.createRelative}"
-        verbose "mkdir -p #{f.create}"
+create-dirs = (final) ->
+    dirs = _.uniq(_.map final, (.create))
+    for d in dirs 
+        verbose "mkdir -p #{d}"
         if options.go
-            shelljs.mkdir('-p', f.create)
+            shelljs.mkdir('-p', d)
 
-    normal "From: #{f.basename} to #{f.finalNameRelative}" 
+move = (f) ->
+    normal "#{f.basename} => #{f.finalNameRelative}" 
     cmd = "mv #{f.original} #{f.finalNameLong}"
     verbose cmd
     if options.go 
@@ -207,11 +215,10 @@ main = ->
         # Replace sequence number and date
         final = replace-placeholders(final)
 
-        # Check if it should create a directory
-        final = compute-dest-dir(final)
-
         # Compute finalNameShort and finalNameLong
         final = compute-final-name(final)
+
+        create-dirs(final)
 
         bb.all([ move(f) for f in final ]).caught (-> console.log "errors found.")
 
