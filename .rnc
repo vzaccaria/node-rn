@@ -10,6 +10,23 @@
         "from": "*",
         "to": "$D{YYMMDD}/$D{YYMMDD}_$K_$000N",
         "description": "As kelby, but creates a folder with creation date"
+    },
+    "bigfold": {
+        "name": "bigfold",
+        "from": "*",
+        "to": "$D{YYMMDD}_$000N_*",
+        "description": "This is what you would use in a big folder.",
+        "options": {
+            "transform": "underscored"
+        }
+    },
+    "download": {
+        "name": "download",
+        "from": "*",
+        "to": "$E/*",
+        "description": "Organize your Download folder, once and for all",
+        "options": {
+            "transform": "underscored"
+        }
     }
-    
 }
