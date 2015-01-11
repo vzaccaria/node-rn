@@ -1,6 +1,6 @@
 # node-rn [![NPM version](https://badge.fury.io/js/node-rn.svg)](http://badge.fury.io/js/node-rn)
 
-> a handy rename file script
+> a handy file renaming tool
 
 ## Install globally with [npm](npmjs.org):
 
@@ -9,8 +9,6 @@ npm i -g node-rn
 ```
 
 ## TLDR; simple usage
-
-Renames files (not folders) by using handy options.
 
 Let's assume you have 3 pdf files in your directory: 
 
@@ -45,7 +43,7 @@ will change the extensions of each file:
 The target filename rule can include one or more keywords:
 
 * `$..0N`: will translate to the file sequence number (padding configurable)
-* `$D{date format}`: will translate to the creation date formatted as specified. It uses momentjs format.
+* `$D{date format}`: will translate to the creation date formatted as specified. It uses [momentjs format](http://momentjs.com/docs/#/displaying/format/).
 * `$E`: will translate to the extension of the file (`noext` if missing)
 * `$K`: will translate to the value specified with the -k option
 
@@ -115,8 +113,18 @@ It can be invoked in this way:
 
 renaming all the `pdf` files according to the template.
 
-There is a bunch of already made and usable templates in the distribution of `rn` so check them out. You can list them with `rn -l`
+There is a bunch of already made and usable templates in the distribution of `rn` so check them out. You can list them with `rn -l`:
 
+```
+Available patterns
+
+name      from  to                              description                                            opts           
+--------  ----  ------------------------------  -----------------------------------------------------  ---------------
+kelby     *     $D{YYMMDD}_$K_$000N             This was described in Scott Kelby's book on Lightroom                 
+kelbyf    *     $D{YYMMDD}/$D{YYMMDD}_$K_$000N  As kelby, but creates a folder with creation date                     
+bigfold   *     $D{YYMMDD}_$000N_*              This is what you would use in a big folder.            fn: underscored
+download  *     $E/*                            Organize your Download folder, once and for all        fn: underscored
+```
 
 ## Author
 

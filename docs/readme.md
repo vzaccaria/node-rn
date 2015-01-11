@@ -6,8 +6,6 @@
 
 ## TLDR; simple usage
 
-Renames files (not folders) by using handy options.
-
 Let's assume you have 3 pdf files in your directory: 
 
     a-slides.pdf 
@@ -95,8 +93,18 @@ It can be invoked in this way:
 
 renaming all the `pdf` files according to the template.
 
-There is a bunch of already made and usable templates in the distribution of `rn` so check them out. You can list them with `rn -l`
+There is a bunch of already made and usable templates in the distribution of `rn` so check them out. You can list them with `rn -l`:
 
+```
+Available patterns
+
+name      from  to                              description                                            opts           
+--------  ----  ------------------------------  -----------------------------------------------------  ---------------
+kelby     *     $D{YYMMDD}_$K_$000N             This was described in Scott Kelby's book on Lightroom                 
+kelbyf    *     $D{YYMMDD}/$D{YYMMDD}_$K_$000N  As kelby, but creates a folder with creation date                     
+bigfold   *     $D{YYMMDD}_$000N_*              This is what you would use in a big folder.            fn: underscored
+download  *     $E/*                            Organize your Download folder, once and for all        fn: underscored
+```
 
 ## Author
 {%= include("author") %}
