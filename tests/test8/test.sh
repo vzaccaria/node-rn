@@ -10,9 +10,9 @@ dstdir=`pwd`
 bindir=$srcdir/../..
 npm=$srcdir/../../node_modules/.bin
 
-touch "with space.pdf"
-rm -f "spaced with space.pdf"
-$bindir/index.js -g '*' 'spaced *' $srcdir/*.pdf > /dev/null && tree > dest.txt
+touch "$srcdir/with space.pdf"
+rm -f "$srcdir/spaced with space.pdf"
+$bindir/index.js -g '*' 'spaced *' $srcdir/*.pdf > /dev/null && cd $srcdir && tree > $srcdir/dest.txt
 $npm/diff-files $srcdir/dest.txt $srcdir/ref.txt -m "With files that have spaces in them"
 
 
