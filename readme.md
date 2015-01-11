@@ -45,7 +45,7 @@ will change the extensions of each file:
 The target filename rule can include one or more keywords:
 
 * `$..0N`: will translate to the file sequence number (padding configurable)
-* `$D{momentjs date format}`: will translate to the creation date formatted as specified
+* `$D{date format}`: will translate to the creation date formatted as specified. It uses momentjs format.
 * `$E`: will translate to the extension of the file (`noext` if missing)
 * `$K`: will translate to the value specified with the -k option
 
@@ -69,7 +69,7 @@ would yield:
     BSlides.pdf
     CSlide.pdf
 
-Possible functions are: classify, underscored, camelized, (de)capitalize. Check `underscore.string` for all the other possibilities; the function must receive a string and return a string.
+Possible functions are: classify, underscored, camelized, (de)capitalize. Check [underscore.string](https://github.com/epeli/underscore.string) for all the other possibilities; the function must receive a string and return a string.
 
 For using pre-saved templates see the sections below:
 
@@ -98,7 +98,7 @@ Options:
 
 ## Templates
 
-Renaming templates are stored in `~/.rnc` in JSON format. This file is a JSON map from template names to template data. For example, this is a rule that I named as `kelby`, since I've read about it in a book about Lightroom written by Scott Kelby; it renames all the files (by preserving the extensions) with the creation date, a keyword (specified with -k in the command line) and a sequence number:
+Renaming templates are stored in `~/.rnc` in JSON format. This file is a JSON map from template names to template data. For example, this is a rule that I named as `kelby`, since I've read about it in a book about Lightroom written by Scott Kelby; it renames all the files (by preserving the extensions) with the creation date, a keyword (specified with `-k` in the command line) and a sequence number:
 
 ```json
 "kelby": {
@@ -113,9 +113,9 @@ It can be invoked in this way:
 
     rn -u 'kelby' -k my_keyword *.pdf
 
-renaming accordingly all the `pdf` files.
+renaming all the `pdf` files according to the template.
 
-There is a bunch of already made and usable templates in the distribution of rn so check them out. You can list the with 'rn -l'
+There is a bunch of already made and usable templates in the distribution of `rn` so check them out. You can list them with `rn -l`
 
 
 ## Author
