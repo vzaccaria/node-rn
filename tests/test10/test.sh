@@ -10,12 +10,5 @@ dstdir=`pwd`
 bindir=$srcdir/../..
 npm=$srcdir/../../node_modules/.bin
 
-$srcdir/clean.sh
-
-for f in $srcdir/test*
-do
-	# is it a directory?
-	if [ -d "$f" ]; then
-	    $f/test.sh
-	fi
-done
+$bindir/index.js '*' '~/$D{YYMM}/s-$K-$000N' $srcdir/*.pdf > $srcdir/dest.txt
+$npm/diff-files $srcdir/dest.txt $srcdir/ref.txt -m "Should work with absolute dirs" 

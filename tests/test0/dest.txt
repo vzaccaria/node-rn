@@ -1,4 +1,2 @@
-Create 1501
-From: a-slides.pdf to 1501/s-a-keyword-000.pdf
-Create 1501
-From: b-slides.pdf to 1501/s-b-keyword-001.pdf
+a-slides.pdf => 1501/s-a-keyword-000.pdf
+b-slides.pdf => 1501/s-b-keyword-001.pdf
