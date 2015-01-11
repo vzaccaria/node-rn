@@ -1,6 +1,6 @@
 {
   "name": "node-rn",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "a handy file renaming tool",
   "bin": {
     "rn": "./index.js"
