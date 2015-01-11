@@ -1,0 +1,8 @@
+.
+├── dest.txt
+├── pippo.pdf
+├── ref.txt
+├── spaced\ with\ space.pdf
+└── test.sh
+
+1 directory, 4 files

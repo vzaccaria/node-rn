@@ -10,5 +10,5 @@ dstdir=`pwd`
 bindir=$srcdir/../..
 npm=$srcdir/../../node_modules/.bin
 
-$bindir/index.js '*' '*' $srcdir/*.pdf -f 'classify' > $srcdir/dest.txt
+$bindir/index.js '*' '*' $srcdir/*.pdf -t 'classify' > $srcdir/dest.txt
 $npm/diff-files $srcdir/dest.txt $srcdir/ref.txt -m "Should work by applying final transform"

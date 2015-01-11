@@ -1,0 +1,12 @@
+Create noext
+From: a-slides to noext/a-slides
+Create pdf
+From: b-slides.pdf to pdf/b-slides.pdf
+Create pdf
+From: c-slide.pdf to pdf/c-slide.pdf
+Create txt
+From: dest.txt to txt/dest.txt
+Create txt
+From: ref.txt to txt/ref.txt
+Create sh
+From: test.sh to sh/test.sh
