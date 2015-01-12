@@ -10,5 +10,5 @@ dstdir=`pwd`
 bindir=$srcdir/../..
 npm=$srcdir/../../node_modules/.bin
 cd $srcdir
-$bindir/index.js -u 'kelby' -k my_keyword $srcdir/*.pdf > $srcdir/dest.txt
+$bindir/index.js -u 'download' -k my_keyword $srcdir/*.pdf > $srcdir/dest.txt
 $npm/diff-files $srcdir/dest.txt $srcdir/ref.txt -v -m "using stored template"

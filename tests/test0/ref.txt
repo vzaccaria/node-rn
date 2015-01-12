@@ -1,2 +1,2 @@
-a-slides.pdf => 1501/s-a-keyword-000.pdf
-b-slides.pdf => 1501/s-b-keyword-001.pdf
+a-slides.pdf => 15/s-a-keyword-000.pdf
+b-slides.pdf => 15/s-b-keyword-001.pdf

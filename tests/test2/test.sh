@@ -10,5 +10,5 @@ dstdir=`pwd`
 bindir=$srcdir/../..
 npm=$srcdir/../../node_modules/.bin
 cd $srcdir
-$bindir/index.js -x '*.pdf' '$D{YYMM}/s-$K-$000N.pdf' $srcdir/*.pdf > $srcdir/dest.txt
+$bindir/index.js -x '*.pdf' '$D{YY}/s-$K-$000N.pdf' $srcdir/*.pdf > $srcdir/dest.txt
 $npm/diff-files $srcdir/dest.txt $srcdir/ref.txt -v -m "Should work by considering extensions, using from=*"
