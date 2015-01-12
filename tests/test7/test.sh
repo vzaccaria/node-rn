@@ -9,6 +9,6 @@ dstdir=`pwd`
 
 bindir=$srcdir/../..
 npm=$srcdir/../../node_modules/.bin
-
+cd $srcdir
 $bindir/index.js '*' '$E/*' $srcdir/* > $srcdir/dest.txt
-$npm/diff-files $srcdir/dest.txt $srcdir/ref.txt -m "With files that have no extension"
+$npm/diff-files $srcdir/dest.txt $srcdir/ref.txt -v -m "With files that have no extension"

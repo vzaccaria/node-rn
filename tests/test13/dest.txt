@@ -2,7 +2,7 @@
 ├── dest.txt
 ├── pippo.pdf
 ├── ref.txt
-├── spaced\ with\ space.pdf
+├── spaced with space.pdf
 ├── test.sh
 └── tst
 

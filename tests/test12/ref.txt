@@ -4,6 +4,6 @@
 ├── ref.txt
 ├── test.sh
 └── tst
-    └── spaced\ with\ space.pdf
+    └── spaced with space.pdf
 
 2 directories, 4 files

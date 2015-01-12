@@ -9,6 +9,6 @@ dstdir=`pwd`
 
 bindir=$srcdir/../..
 npm=$srcdir/../../node_modules/.bin
-
+cd $srcdir
 $bindir/index.js '*' '~/$D{YYMM}/s-$K-$000N' $srcdir/tst/*.pdf > $srcdir/dest.txt
-$npm/diff-files $srcdir/dest.txt $srcdir/ref.txt -m "Should work with absolute dirs and indirect refs" 
+$npm/diff-files $srcdir/dest.txt $srcdir/ref.txt -v -m "Should work with absolute dirs and indirect refs" 
