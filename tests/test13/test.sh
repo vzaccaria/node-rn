@@ -12,6 +12,8 @@ npm=$srcdir/../../node_modules/.bin
 cd $srcdir
 
 mkdir -p "$srcdir/tst"
+mkdir -p "$srcdir/pippo.pdf"
+
 touch "$srcdir/tst/with space.pdf"
 rm -f "$srcdir/spaced with space.pdf"
 rm -f $srcdir/dest.txt
