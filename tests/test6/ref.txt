@@ -1,3 +1,0 @@
-a-slides.pdf => 150111_000_a_slides.pdf
-b-slides.pdf => 150111_001_b_slides.pdf
-c-slide.pdf => 150111_002_c_slide.pdf
