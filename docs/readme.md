@@ -24,6 +24,10 @@ will rename only the first two files, leaving untouched the extensions:
 
 If you omit `--go`, it will only print the new filenames without actually changing them.
 
+To avoid backticks around the first two patterns, you can use a question mark `?`:
+
+    rn ?-slides s-? *.pdf --go
+
 You can include the extension in the renaming with `-x`. For example:
 
     rn -x '*.pdf' '*.pdfx' *.pdf --go
@@ -33,6 +37,8 @@ will change the extensions of each file:
     a-slides.pdfx 
     b-slides.pdfx
     c-slide.pdfx
+
+
 
 ## Additional keyword substitutions
 

@@ -1,0 +1,2 @@
+a-slides.pdf => s-a.pdf
+b-slides.pdf => s-b.pdf

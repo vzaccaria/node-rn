@@ -123,10 +123,12 @@
   replacePatterns = function(final, from, tto){
     var reFrom;
     if (from == null) {
-      from = '*';
+      from = '.*';
     } else {
       from = from.replace(/\*/, "(.*)");
+      from = from.replace(/\?/, "(.*)");
       tto = tto.replace(/\*/, "$1");
+      tto = tto.replace(/\?/, "$1");
     }
     reFrom = new RegExp(from);
     final = _.filter(final, function(it){

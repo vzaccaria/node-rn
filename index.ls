@@ -125,10 +125,13 @@ replace-placeholders = (final) ->
 
 replace-patterns = (final, from, tto) ->
         if not from?
-            from := '*'
+            from := '.*'
         else
             from := from.replace(/\*/, "(.*)")
+            from := from.replace(/\?/, "(.*)")
             tto  = tto.replace(/\*/,"\$1")
+            tto  = tto.replace(/\?/,"\$1")
+
 
         re-from = new RegExp(from)
 

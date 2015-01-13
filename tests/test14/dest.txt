@@ -1,0 +1,3 @@
+a-slides.pdf => ASlides.pdf
+b-slides.pdf => BSlides.pdf
+c-slide.pdf => CSlide.pdf
