@@ -186,6 +186,7 @@ compute-final-name = (files) ->
 
 create-dirs = (final) ->
     dirs = _.uniq(_.map final, (.create))
+    dirs = _.filter(dirs)
     for d in dirs 
         verbose "mkdir -p #{d}"
         if options.go

@@ -202,6 +202,7 @@
     dirs = _.uniq(_.map(final, function(it){
       return it.create;
     }));
+    dirs = _.filter(dirs);
     for (i$ = 0, len$ = dirs.length; i$ < len$; ++i$) {
       d = dirs[i$];
       verbose("mkdir -p " + d);
