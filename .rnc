@@ -28,5 +28,14 @@
         "options": {
             "transform": "underscored"
         }
+    },
+    "papers": {
+        "name": "papers",
+        "from": "*",
+        "to": "./$D{YYMMDD}_*",
+        "description": "Organize your papers  folder, once and for all",
+        "options": {
+            "transform": "underscored"
+        }
     }
 }
